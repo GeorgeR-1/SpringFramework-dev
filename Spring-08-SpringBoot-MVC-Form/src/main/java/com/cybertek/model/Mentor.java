@@ -16,8 +16,5 @@ public class Mentor {
     private boolean graduated;
     private String batch;
     private String company;
-
-
-
-
+    
 }
