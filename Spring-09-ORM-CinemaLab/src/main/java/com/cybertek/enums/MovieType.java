@@ -1,5 +1,5 @@
 package com.cybertek.enums;
 
-public enum MoviesType {
+public enum MovieType {
     PREMIER,REGULAR;
 }
