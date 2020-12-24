@@ -1,5 +1,6 @@
 package com.cybertek.repository;
 
+import com.cybertek.entity.Department;
 import com.cybertek.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -91,6 +92,9 @@ public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
     @Transactional
     @Query(value = "UPDATE employees SET email='admin@email.com' where id=:id",nativeQuery = true)
     void updateEmployeeNativeQuery(@Param("id") Integer id);
+
+    //Named Query
+    List<Employee> retrieveEmployeeSalaryGreaterThan(Integer salary);
 
 
 
