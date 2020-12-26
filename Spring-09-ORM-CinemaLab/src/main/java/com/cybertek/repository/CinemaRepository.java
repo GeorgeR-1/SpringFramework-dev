@@ -38,9 +38,13 @@ public interface CinemaRepository extends JpaRepository<Cinema,Long> {
             "sponsored_name ilike concat('%',:pattern,'%')",
             nativeQuery = true)
     List<Cinema> retrieveAllCinemasByNameOrSponsoredName(String pattern);
-
 //Write a native query to sort all cinemas by name
-
+    @Query(value = "SELECT * FROM cinema ORDER BY name",
+    nativeQuery = true)
+    List<Cinema> sortByName();
 //Write a native query to distinct all cinemas by sponsored name
+    @Query(value = "SELECT DISTINCT sponsored_name FROM cinema",
+    nativeQuery = true)
+    List<String> distinctBySponsoredName();
 
 }

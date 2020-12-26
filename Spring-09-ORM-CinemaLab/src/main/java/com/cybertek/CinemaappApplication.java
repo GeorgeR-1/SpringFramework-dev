@@ -19,6 +19,7 @@ public class CinemaappApplication {
 
     @PostConstruct
     public void runner(){
-        System.out.println(cinemaRepository.findAllByLocation_Country("United States"));
+        System.out.println(cinemaRepository.distinctBySponsoredName());
+
     }
 }
