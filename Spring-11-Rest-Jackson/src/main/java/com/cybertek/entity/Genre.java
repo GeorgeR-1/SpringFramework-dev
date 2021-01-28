@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer"},ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"hibernate_Lazy_Initializer"},ignoreUnknown = true)
 public class Genre extends BaseEntity {
 
     private String name;
