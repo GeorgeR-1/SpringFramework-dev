@@ -12,7 +12,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "course")
+@Table(name = "parent")
 @Getter
 @Setter
 @AllArgsConstructor
