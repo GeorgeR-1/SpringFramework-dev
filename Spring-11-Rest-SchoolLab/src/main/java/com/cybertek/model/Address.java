@@ -56,7 +56,6 @@ public class Address extends BaseEntity{
         String BASE_URL =
                 "http://api.weatherstack.com/current?access_key=02a009b8e3922c395677a1e85406aca6&query=";
 
-
         String uri = BASE_URL + city;
 
         Object currentWeather = restTemplate.getForObject(uri,Object.class);
@@ -68,5 +67,6 @@ public class Address extends BaseEntity{
         return Integer.parseInt(getTemperature.get("temperature").toString());
 
     }
+
 
 }
