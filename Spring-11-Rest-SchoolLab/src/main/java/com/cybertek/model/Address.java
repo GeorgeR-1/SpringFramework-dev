@@ -48,6 +48,7 @@ public class Address extends BaseEntity{
     }
 
     public Integer consumeTemp(String city){
+
         return 5;
     }
 
