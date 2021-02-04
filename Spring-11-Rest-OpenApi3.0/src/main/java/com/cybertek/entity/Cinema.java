@@ -1,5 +1,6 @@
 package com.cybertek.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import javax.persistence.ManyToOne;
 @Setter
 @Getter
 @NoArgsConstructor
+@JsonIgnoreProperties(value = {"hibernate_Lazy_Initializer"},ignoreUnknown = true)
 public class Cinema extends BaseEntity {
 
     private String name;
