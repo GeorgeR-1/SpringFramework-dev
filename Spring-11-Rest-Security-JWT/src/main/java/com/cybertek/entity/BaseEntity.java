@@ -7,7 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
+@MappedSuperclass
 @Getter
 @Setter
 public class BaseEntity {
@@ -22,7 +22,7 @@ public class BaseEntity {
     @JsonIgnore
     @Column(name = "create_date", nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
+    private Date createDate;
 
     @JsonIgnore
     @Column(name = "updated_date", nullable = false)
@@ -39,7 +39,7 @@ public class BaseEntity {
 
     @PrePersist
     private void onPersist(){
-        this.createdDate = new Date();
+        this.createDate = new Date();
         this.updateDate = new Date();
         this.createUserId = 1;
         this.updateUserId = 1;
