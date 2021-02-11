@@ -10,15 +10,18 @@ spring:
     username: postgres
     password: george
     driver-class-name : org.postgresql.Driver
-#    initialization-mode: always
+    initialization-mode: always
     data: classpath:data.sql
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-        ddl-auto : update
+        ddl-auto : create
     show-sql : false
 security:
   jwt:
     secret-key: cybertek
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
