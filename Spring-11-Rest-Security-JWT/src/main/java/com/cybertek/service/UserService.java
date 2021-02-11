@@ -2,8 +2,8 @@ package com.cybertek.service;
 
 import com.cybertek.entity.User;
 import com.cybertek.enums.UserState;
+import com.cybertek.exception.ServiceException;
 import com.cybertek.repository.UserRepository;
-import org.hibernate.service.spi.ServiceException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -37,12 +37,14 @@ public class UserService {
     public User createUser(User user) throws ServiceException {
         User foundUserByEmail = readByEmail(user.getEmail());
         User foundUserByUsername = readByUsername(user.getUsername());
-        if(foundUserByEmail != null) {
-            throw new ServiceException("This user already exists, please change your email");
-        }
-        if(foundUserByUsername != null) {
-            throw new ServiceException("This user already exists, please change your username");
-        }
+
+//        if(foundUserByEmail != null) {
+//            throw new ServiceException("This user already exists, please change your email");
+//        }
+//        if(foundUserByUsername != null) {
+//            throw new ServiceException("This user already exists, please change your username");
+//        }
+
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setIsVerified(false);
         return userRepository.save(user);
