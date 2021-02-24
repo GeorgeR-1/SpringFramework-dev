@@ -24,6 +24,7 @@ public class ProductController {
 
     Logger logger = LoggerFactory.getLogger(ProductController.class);
 
+
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
