@@ -22,7 +22,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> delete(long id) {
+    public List<Product> delete(Long id) {
 
         productRepository.deleteById(id);
 
@@ -30,7 +30,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> updateProduct(long id, Product product) {
+    public List<Product> updateProduct(Long id, Product product) {
 
         Product obj = productRepository.findById(id).get();
         obj.setName(product.getName());
@@ -48,7 +48,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProduct(long id) {
+    public Product getProduct(Long id) {
         return productRepository.findById(id).get();
 
     }

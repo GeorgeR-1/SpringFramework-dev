@@ -22,8 +22,6 @@ public class ProductController {
 
     private ProductService productService;
 
-    Logger logger = LoggerFactory.getLogger(ProductController.class);
-
 
     public ProductController(ProductService productService) {
         this.productService = productService;
@@ -36,11 +34,7 @@ public class ProductController {
 
     @GetMapping
     public  List<Product> getProducts(){
-        logger.info("Before -> Controller:{} - Method:{} - Input Parameter :{}","ProductController","getProducts()");
-
         List<Product> list = productService.getProducts();
-
-        logger.info("After -> Controller:{} - Method:{} - Output Parameters:{}","ProductController","getProducts",list);
         return list;
     }
 
