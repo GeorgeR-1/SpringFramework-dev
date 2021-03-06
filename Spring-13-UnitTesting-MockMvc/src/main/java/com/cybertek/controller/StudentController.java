@@ -21,5 +21,11 @@ public class StudentController {
         return studentService.getStudent_data();
     }
 
+    @GetMapping("/student")
+    Student getStudent_service(){
+        Student student = new Student("mike","smith",20);
+        return student;
+    }
+
 
 }
