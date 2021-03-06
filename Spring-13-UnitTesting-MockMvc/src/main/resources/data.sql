@@ -1,0 +1,1 @@
+INSERT INTO student (age, first_name, last_name) VALUES (20,'mike','smith')
